@@ -1,12 +1,12 @@
-const path = require("path");
+import { join } from 'path';
 
-exports.onCreateWebpackConfig = ({ actions, getConfig }, pluginOptions) => {
+export function onCreateWebpackConfig({ actions, getConfig }, pluginOptions) {
   const hasPluginOptions = Object.keys(pluginOptions).filter(
-    item => item !== "plugins"
+    (item) => item !== 'plugins'
   ).length;
   const config = getConfig();
-  const contextSrc = path.join(config.context, "src");
-  const defaultModules = [contextSrc, "node_modules"];
+  const contextSrc = join(config.context, 'src');
+  const defaultModules = [contextSrc, 'node_modules'];
 
   if (hasPluginOptions) {
     const { plugins, resolveModules, ...aliasOptions } = pluginOptions;
@@ -28,4 +28,4 @@ exports.onCreateWebpackConfig = ({ actions, getConfig }, pluginOptions) => {
       }
     });
   }
-};
+}
