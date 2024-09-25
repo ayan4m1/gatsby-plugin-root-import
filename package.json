@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ayan4m1/gatsby-plugin-root-import"
+    "url": "git+https://github.com/ayan4m1/gatsby-plugin-root-import.git"
   },
   "keywords": [
     "gatsby",
